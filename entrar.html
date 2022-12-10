@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <link rel="icon" href="images/favicon.ico" type="image/ico" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <!-- nao salvar cache -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
+  <title>Entrar - Compartilhando Historias</title>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <!-- font awesome style -->
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <nav class="navbar navbar-static-top navbar-expand-lg custom_nav-container ">
+        <div class="container-fluid">
+
+          <a class="navbar-brand" href="index.html">
+            <img class="img-fluid" src="images/logo.svg" alt="logo">
+          </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <form class="search_form" action="/search" method="get">
+              <input type="text" id="str_q" class="form-control" name="q" placeholder="Buscar livro">
+              <button class="search_icon" type="submit" id="send" disabled>
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </button>
+            </form>
+
+            <ul class="navbar-nav">
+              <li id="btn_login" class="nav-item active">
+                <a class="nav-link pl-lg-0" href="entrar.html">Entrar <span class="sr-only">(current)</span></a>
+              </li>
+            </ul>
+            <div id="btn_sign" class="nav-item">
+              <a class="btn-primary nav-link" href="cadastro.html">Cadastrar-se</a>
+            </div>
+
+            <div id="avatar" hidden>
+             <button class="profilego">
+                <img src="images/profile.jpg" alt="imagemperfil" class="perfil">
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- end header section -->
+  </div>
+
+  <section>
+    <container class="middle">
+      <div class="login">
+        <h2 class="">
+          Entrar
+        </h2>
+        <p>Insira suas credenciais a seguir para usar o Compartilhando Histórias</p>
+        <form id="login">
+          <div class="form-campos">
+            <input type="email" placeholder="Email" id="email"/>
+            <input type="password" placeholder="Senha" id="senha" />
+          </div>
+          <a href="Recuperar_senha.html" class="recuperar_senha">Esqueceu a senha?</a>
+          <div class="btn-box">
+            <button type="submit">
+              Entrar
+            </button>
+          </div>
+        </form>
+      </div>
+    </container>
+  </section>
+
+  <!-- info section -->
+
+  <section class="info_section layout_padding2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 info-col">
+          <div class="info_detail">
+            <h4>
+              Sobre
+            </h4>
+            <p>
+              Desenvolvido pelos alunos do curso de Sistemas de Informação da PUC Minas, referente ao projeto de
+              Aplicações Web.
+            </p>
+            <div class="info_social">
+              <a href="">
+                <i class="fa fa-github" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end info section -->
+
+  <!-- footer section -->
+  <footer class="footer_section">
+    <div class="container">
+      <p>
+        &copy; <span id="displayYear"></span> Compartilhando Historias
+      </p>
+    </div>
+  </footer>
+  <!-- footer section -->
+
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/main.js"></script>
+  
+  <script>
+
+    const URL = "http://localhost:3000/usuarios";
+   
+    $(function(){
+  
+      $('#login').submit(function(e){
+        e.preventDefault();
+  
+          var email= document.getElementById('email').value;
+          var senha = document.getElementById('senha').value;
+  
+  
+      fetch(URL + '?email=' + email + '&senha=' + senha)
+        .then((response) => response.json())
+        .then((data) => {
+          sessionStorage.setItem('id', data[0].id);
+          sessionStorage.setItem('email', data[0].email);
+          sessionStorage.setItem('nome', data[0].nome);
+          sessionStorage.setItem('logado', true);
+        })
+        .then(() => (window.location.href = "/src/index.html"))
+        .catch(console.error);
+        console.log()
+        
+      });
+    });
+  
+  </script>
+
+</body>
+
+</html>

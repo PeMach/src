@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+
+
+
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Site Metas -->
+    <link rel="icon" href="images/favicon.ico" type="image/ico" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <!-- nao salvar cache -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <title>Anúncio livro encontrado — Compartilhando Historias</title>
+
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <!-- font awesome style -->
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="css/responsive.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    
+    <div class="hero_area">
+        <!-- header section strats -->
+        <header class="header_section">
+            <nav class="navbar navbar-static-top navbar-expand-lg custom_nav-container ">
+                <div class="container-fluid">
+
+                    <a class="navbar-brand" href="index.html">
+                        <img class="img-fluid" src="images/logo.svg" alt="logo">
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class=""> </span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                        <form class="search_form" action="/search" method="get">
+                            <input type="text" id="str_q" class="form-control" name="q" placeholder="Buscar livro">
+                            <button class="search_icon" type="submit" id="send" disabled>
+                              <i class="fa fa-search" aria-hidden="true"></i>
+                            </button>
+                          </form>
+              
+
+                        <ul  class="navbar-nav">
+                            <li id="btn_login" class="nav-item active">
+                                <a class="nav-link pl-lg-0" href="entrar.html">Entrar <span
+                                        class="sr-only">(current)</span></a>
+                            </li>
+                        </ul>
+                        <div id="btn_sign" class="nav-item">
+                            <a class="btn-primary nav-link" href="cadastro.html">Cadastrar-se</a>
+                        </div>
+
+                        <div id="avatar" hidden>
+                            <button class="profilego">
+                              <img src="images/profile.jpg" alt="imagemperfil" class="perfil">
+                            </button>
+                          </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <!-- end header section -->
+    </div>
+    <section class="layout_padding">
+        <container class="container-fluid">
+            <div class="m-auto">
+                <div class="cabecalhoreg">
+                    <h2 id="book_title"> </h2> <p id= "synopsis"> </p>
+                </div>
+                <div class="card register-card">
+                    <form id="cadastro-livro">
+                        <input hidden="" type="text" id="id" value="">
+                        <input hidden="" type="text" id="imagem">
+                        <input class="col-md-5" type="text" placeholder="Título" name="tit" id="livro-title" >
+                        <input class="col-md-5" type="text" placeholder="Autor" name="autor" id="livro-author" >
+                        <br>
+                        <label class="labelcomment" for="description">
+                            <textarea style="margin: 4px;" class="col-md-10 inputrow" id="description" rows="30" cols="45" placeholder="Descrição" name="desc"></textarea>
+                        <input class="col-md-5" placeholder="ISBN" id="livro-ISBN"type="text">
+                        <input class="col-md-5" placeholder="Gênero" id="livro-genero" type="text">
+                        <input class="col-md-5" placeholder="Edicao"  id="livro-edition" type="number">
+                         <input class="col-md-5" placeholder="Ano da Publicação" id="livro-publi"  type="number">
+                        <div class="form-group">
+
+                        <div style="padding-left: 20px; margin: 8px;" > Estado
+                            <select name="estado" id="estado">
+                                <option value="Novo">Novo</option >
+                                <option value="Usado">Usado</option >   
+                                </select>
+                        </div>
+
+                        <!--criar class css para estiliar lista suspensa-->
+
+                        <div style="padding-left: 20px;margin: 8px;" > Interesse
+                            <select name="interessse" id="interesse">
+                                <option value="Troca">Troca</option >
+                                <option value="Venda">Venda</option >
+                                <option value="Interesse">Interesse</option >    
+                              </select>
+                        </div>
+
+                        <input style="margin: 4px;" class="col-md-5" type="number" placeholder="Preço" id="livro-valor" >
+                        </div>
+                        
+                        <div style="padding-left: 20px;margin: 8px;" > Edição Especial
+                            
+                            <select name="ed_esp" id="ed_esp" > 
+                                <option value="0">Não</option >
+                                <option value="1">Sim</option >
+                              </select> 
+                        </div>
+
+
+                        <textarea style="margin: 4px;" id="especial-desc" class="col-md-10 inputrow" rows="30" cols="45" placeholder="Insira informações sobre a edição especial" name="description"></textarea>
+                            <input style="width: 100%;
+                            border: 0;
+                            height: 50px;
+                            border-radius: 25px;
+                            margin-top: 12px;
+                            margin-bottom: 25px;
+                            padding-left: 25px;
+                            outline: none;
+                            color: #101010;
+                            background: white;" class="col-md-10 inputfile" type="file" name="file" id="file">
+                            <div class="buttonbox">
+                            <button class="Reginter" type="submit">Registrar</button>   
+                        </div>                              
+                    </form>
+
+                </div>
+        </container>
+    </section>
+
+    <!-- info section -->
+
+    <section class="info_section layout_padding2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 info-col">
+                    <div class="info_detail">
+                        <h4>
+                            Sobre
+                        </h4>
+                        <p>
+                            Desenvolvido pelos alunos do curso de Sistemas de Informação da PUC Minas, referente ao
+                            projeto de Aplicações Web.
+                        </p>
+                        <div class="info_social">
+                            <a href="">
+                                <i class="fa fa-github" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- end info section -->
+
+    <!-- footer section -->
+    <footer class="footer_section">
+        <div class="container">
+            <p>
+                &copy; <span id="displayYear"></span> Compartilhando Historias
+            </p>
+        </div>
+    </footer>
+    <!-- footer section -->
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/common.js"></script>
+
+    <script src="js/main.js"></script>    
+
+</body>
+
+</html>

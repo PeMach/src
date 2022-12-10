@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Site Metas -->
+    <link rel="icon" href="images/favicon.ico" type="image/ico" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <!-- nao salvar cache -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <title>Registrar Interesse — Compartilhando Historias</title>
+
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <!-- font awesome style -->
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="css/responsive.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+    <div class="hero_area">
+        <!-- header section strats -->
+        <header class="header_section">
+            <nav class="navbar navbar-static-top navbar-expand-lg custom_nav-container ">
+                <div class="container-fluid">
+
+                    <a class="navbar-brand" href="index.html">
+                        <img class="img-fluid" src="images/logo.svg" alt="logo">
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class=""> </span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                        <form class="search_form">
+                            <input type="text" class="form-control" placeholder="Buscar livro">
+                            <button class="search_icon" type="submit">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                            </button>
+                        </form>
+
+                        <ul class="navbar-nav">
+                            <li class="nav-item active">
+                                <a class="nav-link pl-lg-0" href="entrar.html">Entrar <span
+                                        class="sr-only">(current)</span></a>
+                            </li>
+                        </ul>
+                        <div id="btn_sign" class="nav-item">
+                            <a class="btn-primary nav-link" href="cadastro.html">Cadastrar-se</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <!-- end header section -->
+    </div>
+    
+    <section class="layout_padding">
+        <container class="middlereg">
+            <div class="info1">
+                <div class="cabecalhoreg">
+                    <h2>Registre seu interesse em uma obra</h2>
+                </div>
+                <div class="boxmoby">
+                    <div>
+                        <h2>Upe a imagem do livro:</h2>
+                        <input class="inputfile" type="file" name="file">
+                    </div>
+                </div>
+                <form action="http://localhost:3000/" id="registro-interesse-LNE" method="post">
+                    <input class="inputnewh" placeholder="Título" type="text" id="title" required>
+                    <input class="inputnewh" placeholder="Autor" type="text" id="author" required>
+                    <input class="ISBN" placeholder="ISBN" type="text" id="isbn">
+                    <input class="col-md-5" type="number" placeholder="Preço" id="livro-valor" > <br>
+                    <label class="labelcomment" for="textarea">
+                          Escreva seu comentário:
+                    </label>
+                    <textarea class="inputrow" rows="7" cols="45" name="description" id="description">
+                    </textarea>
+                    <div class="form-group">
+                        <div style="padding-left: 20px;" > Você tem interesse por um livro:
+                            <select name="condition" id="condition">
+                                <option value="Novo">Novo</option >
+                                <option value="Usado">Usado</option >
+                              </select>
+                        </div> <br><br>
+                    </div>    
+                    <div class="Reginter">
+                        <button type="submit" class="interbutt">Registrar</button>
+                    </div>
+                </form>
+            </div>
+            <row>
+                <div style="height: 640px;">
+                </div>
+            </row>
+        </container>
+    </section>
+
+    <!-- info section -->
+
+    <section class="info_section layout_padding2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 info-col">
+                    <div class="info_detail">
+                        <h4>
+                            Sobre
+                        </h4>
+                        <p>
+                            Desenvolvido pelos alunos do curso de Sistemas de Informação da PUC Minas, referente ao
+                            projeto de Aplicações Web.
+                        </p>
+                        <div class="info_social">
+                            <a href="">
+                                <i class="fa fa-github" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- end info section -->
+
+    <!-- footer section -->
+    <footer class="footer_section">
+        <div class="container">
+            <p>
+                &copy; <span id="displayYear"></span> Compartilhando Historias
+            </p>
+        </div>
+    </footer>
+    <!-- footer section -->
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/common.js"></script>
+
+    <script src="js/registrar-interesse-livro-n-achado.js"></script>
+
+</body>
+
+</html>

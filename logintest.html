@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+</head>
+
+<body>
+  <div id="app">
+    <v-app>
+      <v-main>
+        <form id="login">
+          <label>E-mail: <input id="email" type="text" name="email" /></label>
+          <label>Senha: <input id="pass" type="password" name="password" /></label>
+          <br /><br />
+          <button type="submit">Login</button>
+        </form>
+        <p id="log"></p>
+      </v-main>
+    </v-app>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+  <script>
+
+  const URL = 'http://localhost:3000/usuarios';
+ 
+  $(function(){
+
+    $('#login').submit(function(e){
+      e.preventDefault();
+
+        var email= document.getElementById('email').value;
+        var pass = document.getElementById('pass').value;
+
+
+    fetch(URL + '?email=' + email + '&senha=' + pass)
+      .then((response) => response.json())
+      .then((data) => {
+        sessionStorage.setItem('id', data[0].id);
+        sessionStorage.setItem('email', data[0].email);
+        sessionStorage.setItem('nome', data[0].nome);
+        sessionStorage.setItem('logado', true);
+      })
+      .catch(console.error);
+    });
+
+    var logado = sessionStorage.getItem('logado');
+    console.log(logado);
+  });
+
+</script>
+</body>
+</html>

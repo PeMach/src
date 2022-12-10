@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <link rel="icon" href="images/favicon.ico" type="image/ico" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <!-- nao salvar cache -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+
+  <title>Nova senha — Compartilhando Historias</title>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <!-- font awesome style -->
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+  <script src="js/resetpw.js"></script>
+
+  <script>function isLogged() {
+
+      var logado = sessionStorage.getItem('logado');
+      if (logado == 'true') {
+        console.log(true)
+      }
+      else {
+        console.log(false)
+        alert('Você está deslogado, por favor, faça o login novamente')
+        window.location.href = "entrar.html";
+      }
+    }
+
+
+    isLogged();</script>
+
+</head>
+
+<body>
+
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <nav class="navbar navbar-static-top navbar-expand-lg custom_nav-container ">
+        <div class="container-fluid">
+
+          <a class="navbar-brand" href="index.html">
+            <img class="img-fluid" src="images/logo.svg" alt="logo">
+          </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <form class="search_form" action="/search" method="get">
+              <input type="text" id="str_q" class="form-control" name="q" placeholder="Buscar livro">
+              <button class="search_icon" type="submit" id="send" disabled>
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </button>
+            </form>
+            <ul class="navbar-nav">
+            </ul>
+            <div>
+              <button class="profilego">
+                <img src="images/profile.jpg" alt="imagemperfil" class="perfil">
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- end header section -->
+
+
+    <section class="layout_padding">
+      <container class="middle">
+        <div style="width: 100%;max-width: 600px;">
+          <div class="cabecalhoreg">
+            <h2>Nova senha</h2>
+          </div>
+          <div class="cadeadobox">
+            <div class="icon-box">
+              <i class="fa fa-lock" aria-hidden="true"></i>
+            </div>
+          </div>
+          <br>
+          <div class="labelninput">
+            <input type="text" placeholder="Nova senha" id="Confirm" class="form-control2">
+          </div>
+          <div class="labelninput2">
+            <input type="text" placeholder="Confirmar senha" id="Confirm2" class="form-control3">
+          </div>
+          <br>
+          <div class="enviars">
+            <button onclick="novaSenha()" class="Enviarsenha">Resetar senha</button>
+          </div>
+        </div>
+      </container>
+    </section>
+
+    <!-- info section -->
+
+    <section class="info_section layout_padding2">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 info-col">
+            <div class="info_detail">
+              <h4>
+                Sobre
+              </h4>
+              <p>
+                Desenvolvido pelos alunos do curso de Sistemas de Informação da PUC Minas, referente ao
+                projeto de
+                Aplicações Web.
+              </p>
+              <div class="info_social">
+                <a href="">
+                  <i class="fa fa-github" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- end info section -->
+
+    <!-- footer section -->
+    <footer class="footer_section">
+      <div class="container">
+        <p>
+          &copy; <span id="displayYear"></span> Compartilhando Historias
+        </p>
+      </div>
+    </footer>
+    <!-- footer section -->
+
+    <!-- jQery -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/common.js"></script>
+
+</body>
+
+</html>
